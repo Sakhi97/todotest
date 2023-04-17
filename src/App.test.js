@@ -35,6 +35,10 @@ expect(tablecell).toBeInTheDocument();
 const buttonClear = screen.getByText('Clear todos');
 fireEvent.click(buttonClear);
 expect(tablecell).not.toBeInTheDocument();
+  
+  // Addition to the existing test
+  const noTodos = screen.queryByText(/go to coffee/i);
+  expect(noTodos).toBeNull();
 })
 
 
